@@ -1,0 +1,189 @@
+#>------------------> [Welcome to config] <------------------<#
+
+command /kit [<text>]:
+	trigger:
+		#No touch
+		if argument 1 is not set:
+			message "&c&lKits &8>> &7Kits Disponibles: &eUsuario | Vip | Mod | Admin | Owner" to sender
+			stop
+		if argument 1 is "Usuario":
+			message "&c&lKits &8>> &7Kit Puesto: &eUsuario" to sender
+			execute player command "/kitsUsuario+"
+			stop
+		if argument 1 is "Vip":
+			message "&c&lKits &8>> &7Kit Puesto: &eVip" to sender
+			execute player command "/kitsVip+"
+			stop
+		if argument 1 is "Mod":
+			message "&c&lKits &8>> &7Kit Puesto: &eMod" to sender
+			execute player command "/kitsMod+"
+			stop
+		if argument 1 is "Admin":
+			message "&c&lKits &8>> &7Kit Puesto: &eAdmin" to sender
+			execute player command "/kitsAdmin+"
+			stop
+		if argument 1 is "Owner":
+			message "&c&lKits &8>> &7Kit Puesto: &eOwner" to sender
+			execute player command "/kitsOwner+"
+			stop
+
+command /kits:
+	trigger:
+		open chest with 6 rows named "&c&lKits" to player
+		format slot 0 of player with Gray Stained Glass pane named "-" to close
+		format slot 1 of player with Gray Stained Glass pane named "-" to close
+		format slot 2 of player with Gray Stained Glass pane named "-" to close
+		format slot 3 of player with Gray Stained Glass pane named "-" to close
+		format slot 4 of player with Paper named "&cSkript by: &eNovaCraft1254 and AlexMods" to close
+		format slot 5 of player with Gray Stained Glass pane named "-" to close
+		format slot 6 of player with Gray Stained Glass pane named "-" to close
+		format slot 7 of player with Gray Stained Glass pane named "-" to close
+		format slot 8 of player with Gray Stained Glass pane named "-" to close
+		format slot 9 of player with Gray Stained Glass pane named "-" to close
+		format slot 10 of player with Paper named "&cCreator: &2NovaCraft1254" to close
+		format slot 16 of player with Paper named "&cSubCreator: &2AlexMods" to close
+		format slot 17 of player with Gray Stained Glass pane named "-" to close
+		format slot 18 of player with Gray Stained Glass pane named "-" to close
+		format slot 22 of player with Block of Coal named "&7Kit: Usuario" to close then run [execute player command "/Kit Usuario"]
+		format slot 26 of player with Gray Stained Glass pane named "-" to close
+		format slot 27 of player with Gray Stained Glass pane named "-" to close
+		format slot 29 of player with Block of Gold named "&7Kit: &eVip" to close then run [execute player command "/kit Vip"]
+		format slot 31 of player with Block of Emerald named "&7Kit: &2Mod" to close then run [execute player command "/kit Mod"]
+		format slot 33 of player with Block of Redstone named "&7Kit: &cAdmin" to close then run [execute player command "/kit Admin"]
+		format slot 35 of player with Gray Stained Glass pane named "-" to close
+		format slot 36 of player with Gray Stained Glass pane named "-" to close
+		format slot 40 of player with Lapis lazuli block named "&7Kit: &4Owner" to close then run [execute player command "/kit Owner"]
+		format slot 44 of player with Gray Stained Glass pane named "-" to close
+		format slot 45 of player with Gray Stained Glass pane named "-" to close
+		format slot 46 of player with Gray Stained Glass pane named "-" to close
+		format slot 47 of player with Gray Stained Glass pane named "-" to close
+		format slot 48 of player with Gray Stained Glass pane named "-" to close
+		format slot 49 of player with Gray Stained Glass pane named "-" to close
+		format slot 50 of player with Gray Stained Glass pane named "-" to close
+		format slot 51 of player with Gray Stained Glass pane named "-" to close
+		format slot 52 of player with Gray Stained Glass pane named "-" to close
+		format slot 53 of player with Gray Stained Glass pane named "-" to close
+
+command /kitsUsuario+:
+	trigger:
+		wait 1 second
+		#Customizable please no touch ("give player a [Custom item] named "[Customizable Name]")"
+		give player a Leather cap named "&7Kit: &eUsuario"
+		give player a Leather Tunic named "&7Kit: &eUsuario"
+		give player a Leather Pants named "&7Kit: &eUsuario"
+		give player a Leather Boots named "&7Kit: &eUsuario"
+		give player a stone sword named "&7Kit: &eUsuario"
+		give player a stone pickaxe named "&7Kit: &eUsuario"
+		give player a stone axe named "&7Kit: &eUsuario"
+		give player a stone Shovel named "&7Kit: &eUsuario"
+		give player 16 steak named "&7Kit: &eUsuario"
+		set {ColdoownU.%sender%} to true
+		wait 3 minutes
+		set {ColdoownU.%sender%} to false
+
+command /kitsVip+:
+	permission: Vip.Kit
+	permission message: &c&lKits &8>> &7El servidor detecto que &eno tienes permisos &7por lo tanto &4no se te dara el kit.
+	trigger:
+		wait 1 second
+		#Customizable please no touch "give player a [Custom item] named "[Customizable Name]"
+		give player a Iron Helmet named "&7Kit: &a[&eVip&a]"
+		give player a Iron Chestplate named "&7Kit: &a[&eVip&a]"
+		give player a Iron Leggings named "&7Kit: &a[&eVip&a]"
+		give player a Iron boots named "&7Kit: &a[&eVip&a]"
+		give player a Iron Sword named "&7Kit: &a[&eVip&a]"
+		give player a Iron pickaxe named "&7Kit: &a[&eVip&a]"
+		give player a Iron axe named "&7Kit: &a[&eVip&a]"
+		give player a Iron Shovel named "&7Kit: &a[&eVip&a]"
+		give player 32 steak named "&7Kit: &a[&eVip&a]"
+		give player 16 Golden apple named "&7Kit: &a[&eVip&a]"
+		#No touch |
+		set {ColdoownV.%sender%} to true
+		wait 5 minutes
+		set {ColdoownV.%sender%} to false
+
+command /kitsMod+:
+	permission: Mod.kit
+	permission message: &c&lKits &8>> &7El servidor detecto que &eno tienes permisos &7por lo tanto &4no se te dara el kit.
+	trigger:
+		wait 1 second
+		#Customizable please no touch ("give player a [Custom item] named "[Customizable Name]")"
+		give player a Iron Helmet of protection 2 named "&7Kit: &2Mod"
+		give player a Iron Chestplate of protection 2 named "&7Kit: &aMod"
+		give player a Iron Leggings of protection 2 named "&7Kit: &aMod"
+		give player a Iron Boots of protection 2 named "&7Kit: &aMod"
+		give player a Diamond sword of sharpness 1 named "&7Kit: &aMod"
+		give player a Diamond pickaxe of Unbreaking 3 named "&7Kit: &aMod"
+		give player a Diamond axe of Unbreaking 3 named "&7Kit: &aMod"
+		give player a Diamond Shovel of Unbreaking 3 named "&7Kit: &aMod"
+		give player 32 steak named "&7Kit: &aMod"
+		give player 16 golden apple named "&7Kit: &aMod"
+		set {ColdoownM.%sender%} to true
+		wait 7 minutes
+		set {ColdoownM.%sender%} to false
+
+command /kitsAdmin+:
+	permission: Admin.kit
+	permission message: &c&lKits &8>> &7El servidor detecto que &eno tienes permisos &7por lo tanto &4no se te dara el kit.
+	trigger:
+		wait 1 second
+		#Customizable please no touch ("give player a [Custom item] named "[Customizable Name]")"
+		give player a Diamond Helmet named "&7Kit: &cAdmin"
+		give player a Diamond Chestplate named "&7Kit: &cAdmin"
+		give player a Diamond Leggings named "&7Kit: &cAdmin"
+		give player a Diamond Boots named "&7Kit: &cAdmin"
+		give player a Diamond sword of sharpness 1 named "&7Kit: &cAdmin"
+		give player a Diamond pickaxe of Unbreaking 3 named "&7Kit: &cAdmin"
+		give player a Diamond axe of Unbreaking 3 named "&7Kit: &cAdmin"
+		give player a Diamond Shovel of Unbreaking 3 named "&7Kit: &cAdmin"
+		give player 64 steak named "&7Kit: &cAdmin"
+		give player 32 golden apple named "&7Kit: &cAdmin"
+		set {ColdoownA.%sender%} to true
+		wait 10 minutes
+		set {ColdoownA.%sender%} to false
+
+command /kitsOwner+:
+	permission: Owner.kit
+	permission message: &c&lKits &8>> &7El servidor detecto que &eno tienes permisos &7por lo tanto &4no se te dara el kit.
+	trigger:
+		wait 1 second
+		#Customizable please no touch ("give player a [Custom item] named "[Customizable Name]")"
+		give player a Diamond Helmet of protection 2,Unbreaking 3 named "&7Kit: &4Owner"
+		give player a Diamond Chestplate of protection 2,Unbreaking 3 named "&7Kit: &4Owner"
+		give player a Diamond Leggings of protection 2, Unbreaking 3 named "&7Kit: &4Owner"
+		give player a Diamond Boots of protection 2, Unbreaking 3 named "&7Kit: &4Owner"
+		give player a Diamond sword of sharpness 2 named "&7Kit: &4Owner"
+		give player a Diamond pickaxe of Unbreaking 3 named "&7Kit: &4Owner"
+		give player a Diamond axe of Unbreaking 3 named "&7Kit: &4Owner"
+		give player a Diamond Shovel of Unbreaking 3 named "&7Kit: &4Owner"
+		give player 64 steak named "&7Kit: &4Owner"
+		give player 64 golden apple named "&7Kit: &4Owner"
+
+on command "/KitsAdmin+":
+	if {ColdoownA.%sender%} is true:
+		cancel event
+		wait 1 second
+		#Message is Customizable
+		message "&c&lKits &8>> &7Tienes que esperar 10 minutos y intentalo devuelta" to sender
+
+
+on command "/KitsMod+":
+	if {ColdoownM.%sender%} is true:
+		cancel event
+		wait 1 second
+		#Message is Customizable
+		message "&c&lKits &8>> &7Tienes que esperar 7 minutos y intentalo devuelta" to sender
+
+on command "/KitsVip+":
+	if {ColdoownV.%sender%} is true:
+		cancel event
+		wait 1 second
+		#Message is customizable
+		message "&c&lKits &8>> &7Tienes que esperar 5 minutos y intentalo devuelta" to sender
+		
+on command "/KitsUsuario+":
+	if {ColdoownU.%sender%} is true:
+		cancel event
+		wait 1 second
+		#Message is customizable
+		message "&c&lKits &8>> &7Tienes que esperar 3 minutos y intentalo devuelta" to sender
